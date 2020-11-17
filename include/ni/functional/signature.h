@@ -33,7 +33,7 @@
 
 #pragma once
 
-#include <boost/config.hpp>
+//#include <boost/config.hpp>
 
 #include <type_traits>
 #include <tuple>
@@ -72,7 +72,7 @@ namespace ni
     template < typename Result , typename... Args >
     struct signature< Result ( Args... ) >
     {
-        BOOST_STATIC_CONSTEXPR auto num_args = sizeof...(Args);
+        static constexpr auto num_args = sizeof...(Args);
 
         typedef Result type( Args... );
         //using  type = Result( Args... );

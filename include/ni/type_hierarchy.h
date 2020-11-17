@@ -71,7 +71,6 @@
 #include <ni/meta/scan_add.h>
 #include <ni/meta/fold_add.h>
 
-#include <boost/assert.hpp>
 #include <cstdint>
 #include <cstddef>
 #include <utility>
@@ -238,9 +237,10 @@ namespace type_hierarchy_detail {
     {
         static typename Config::id_t id{};
         ++id;
-        BOOST_ASSERT_MSG( id < (static_cast<typename Config::id_t>(1) << get<Level>(typename Config::bits_per_level{}))
-                        , "Ids for level are exhausted."
-                        );
+        assert( id < (static_cast<typename Config::id_t>(1) << get<Level>(typename Config::bits_per_level{})) );
+        // BOOST_ASSERT_MSG( id < (static_cast<typename Config::id_t>(1) << get<Level>(typename Config::bits_per_level{}))
+        //                 , "Ids for level are exhausted."
+        //                 );
         return id;
     }
 

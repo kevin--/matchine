@@ -19,7 +19,6 @@ endif()
 # DEPENDENCIES
 # ------------------------------------------------------------------------------
 
-find_package( Boost )
 find_package( Gtest QUIET )
 find_package( Nonius QUIET )
 
@@ -29,7 +28,7 @@ find_package( Nonius QUIET )
 # ------------------------------------------------------------------------------
 
 add_library( matchine INTERFACE )
-target_compile_features( matchine INTERFACE cxx_std_14 )
+target_compile_features( matchine INTERFACE cxx_std_17 )
 target_include_directories( matchine INTERFACE include )
 
 

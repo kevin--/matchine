@@ -68,8 +68,7 @@
 #include <ni/meta/fold_add.h>
 #include <ni/meta/try_catch.h>
 
-#include <boost/optional.hpp>
-
+#include <optional>
 
 namespace ni
 {
@@ -134,7 +133,7 @@ namespace ni
             ,   bool
             ,   std::conditional_t
                 <   sum_of_arguments == size_t(sizeof...(Functions))
-                ,   boost::optional<wrapped_result_t>
+                ,   std::optional<wrapped_result_t>
                 ,   wrapped_result_t
                 >
             >;
